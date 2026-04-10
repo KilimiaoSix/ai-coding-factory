@@ -11,6 +11,9 @@
 - `Requirement`
   - 正式需求对象
   - 进入阶段推进、任务拆解和门禁判断
+- `ChangeRequest`
+  - `Start` 后正式需求变更对象
+  - 不能用 `Requirement` 静默覆盖来替代
 - `Task` / `TaskRun`
   - 分别表示任务定义和执行实例
 - `VerificationRun`
@@ -32,13 +35,16 @@
 ## 关键关系
 
 - `Project` 1:N `Requirement`
+- `Project` 1:N `RequirementDraft`
 - `Requirement` 1:N `Task`
 - `Task` 1:N `TaskRun`
+- `Requirement` 1:N `ChangeRequest`
 - `Requirement` 1:N `VerificationRun`
 - `Requirement` 1:N `ReviewRecord`
 - `Requirement` 1:N `Bug`
 - `Requirement` 1:N `Blocker`
 - `Requirement` 1:N `GateDecision`
+- `ChangeRequest` 1:N `ReviewRecord`
 
 ## 输出契约
 
